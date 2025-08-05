@@ -400,7 +400,91 @@ See the [RAGFlow Roadmap 2025](https://github.com/infiniflow/ragflow/issues/4214
 - [Twitter](https://twitter.com/infiniflowai)
 - [GitHub Discussions](https://github.com/orgs/infiniflow/discussions)
 
+
+
 ## 🙌 Contributing
 
 RAGFlow flourishes via open-source collaboration. In this spirit, we embrace diverse contributions from the community.
 If you would like to be a part, review our [Contribution Guidelines](https://ragflow.io/docs/dev/contributing) first.
+
+1. RAGFlow là gì?
+RAGFlow là một phần mềm mã nguồn mở giúp xây dựng hệ thống hỏi đáp thông minh (kiểu ChatGPT) nhưng có khả năng tìm kiếm thông tin trong tài liệu riêng của doanh nghiệp hoặc cá nhân.
+Điểm đặc biệt là nó sử dụng công nghệ RAG (Retrieval-Augmented Generation):
+
+"Retrieval" nghĩa là tìm kiếm các đoạn thông tin liên quan trong kho dữ liệu (ví dụ: file Word, PDF, web, bảng Excel, v.v.).
+
+"Generation" nghĩa là tạo ra câu trả lời dựa trên các đoạn thông tin vừa tìm được, nhờ sức mạnh của các mô hình ngôn ngữ lớn (LLM, ví dụ: GPT, Claude, Grok…).
+
+Bạn có thể hình dung RAGFlow như một trợ lý AI trả lời dựa trên chính tài liệu của bạn, đồng thời cung cấp dẫn chứng rõ ràng cho từng câu trả lời, hạn chế tối đa hiện tượng “bịa” thông tin.
+
+2. Các tính năng nổi bật
+Hiểu sâu tài liệu phức tạp: Hỗ trợ nhiều định dạng file, kể cả hình ảnh trong PDF, tài liệu scan, bảng tính, trang web, dữ liệu có cấu trúc lẫn phi cấu trúc.
+
+Trích xuất tri thức thông minh: Phân chia tài liệu thành các đoạn logic (“chunking”), dễ kiểm tra và kiểm soát.
+
+Dẫn chứng và kiểm chứng: Mỗi câu trả lời đều có liên kết trích dẫn rõ ràng tới nguồn gốc trong tài liệu.
+
+Tùy biến, mở rộng dễ dàng: Cho phép cấu hình nhiều loại mô hình AI (LLM), mô hình nhúng, tích hợp API.
+
+Tự động hóa quy trình RAG: Phù hợp cả cho cá nhân lẫn doanh nghiệp lớn.
+
+Hỗ trợ nhiều ngôn ngữ, xử lý câu hỏi đa ngôn ngữ.
+
+3. Kiến trúc & cách hoạt động cơ bản
+Nạp dữ liệu: Bạn đưa lên tài liệu của mình (Word, PDF, Excel, web, hình ảnh…).
+
+Phân tích & trích xuất tri thức: Hệ thống sẽ “cắt” các tài liệu thành các đoạn nhỏ (chunk), phân loại, gắn nhãn, hiểu nội dung.
+
+Tìm kiếm thông minh: Khi có câu hỏi, RAGFlow sẽ đi tìm các đoạn tài liệu liên quan nhất.
+
+Sinh câu trả lời: Dùng LLM để tổng hợp thông tin, tạo câu trả lời, dẫn nguồn cụ thể cho từng ý trả lời.
+
+Giao diện web thân thiện: Dễ dàng dùng thử qua trang web demo hoặc tự triển khai server.
+
+4. Hướng dẫn sử dụng nhanh
+Yêu cầu tối thiểu:
+Máy tính có tối thiểu 4 CPU, 16GB RAM, 50GB ổ cứng.
+
+Đã cài Docker, Docker Compose (trên Windows/Mac/Linux).
+
+Đọc kỹ phần "Get Started" trong README của repo.
+
+Các bước cơ bản:
+Clone repo về máy:
+
+bash
+Sao chép
+Chỉnh sửa
+git clone https://github.com/infiniflow/ragflow.git
+Chạy server với Docker:
+
+bash
+Sao chép
+Chỉnh sửa
+cd ragflow/docker
+docker compose -f docker-compose.yml up -d
+(nên kiểm tra và chỉnh các thông số cấu hình nếu cần, xem README chi tiết)
+
+Truy cập giao diện web:
+
+Dùng trình duyệt mở địa chỉ IP của máy vừa chạy server (mặc định là port 80).
+
+Tùy chỉnh mô hình AI & cấu hình thêm:
+
+Cập nhật các file cấu hình để chọn loại LLM, API KEY, v.v. (hướng dẫn kỹ trong tài liệu).
+
+5. Tài liệu, cộng đồng & hỗ trợ
+Tài liệu đầy đủ: https://ragflow.io/docs/dev/
+
+Demo online: https://demo.ragflow.io/
+
+Hỏi đáp, trao đổi: Discord, GitHub Discussions
+
+Lộ trình phát triển: Roadmap
+
+6. Kết luận nhanh cho người mới
+RAGFlow không chỉ là chatbot mà là nền tảng tạo ra AI hỏi đáp, tìm kiếm tài liệu cực kỳ thông minh trên chính dữ liệu riêng của bạn/doanh nghiệp.
+
+Dễ mở rộng, có thể chạy local hoặc trên server, phù hợp với cả lập trình viên lẫn người không chuyên (nếu setup cơ bản).
+
+Cộng đồng hỗ trợ mạnh, phát triển liên tục.
